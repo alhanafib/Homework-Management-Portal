@@ -1,8 +1,8 @@
-# 📚 Homework Management Portal — BAF Shaheen College Dhaka
+# 📚 Homework Management Portal
 
 ![Homework Portal Preview](assets/pre.png)
 
-A comprehensive homework management system built for **BAF Shaheen College Dhaka, Class VIII Pluto section**. This web application allows students to view daily homework assignments, filter by subject and date, search for specific tasks, and helps teachers manage homework submissions through an admin panel.
+A comprehensive homework management system. This web application allows students to view daily homework assignments, filter by subject and date, search for specific tasks, and helps teachers manage homework submissions through an admin panel.
 
 ## 🔒 Auth Info
 - **User** — demo@gmail.com
