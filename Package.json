@@ -1,0 +1,25 @@
+{
+    "name": "homework-management-system",
+    "version": "1.0.0",
+    "description": "BAF Shaheen College Homework Management System",
+    "main": "index.html",
+    "scripts": {
+        "dev": "live-server --port=3000",
+        "build": "echo 'Build complete'",
+        "deploy": "firebase deploy"
+    },
+    "keywords": [
+        "homework",
+        "management",
+        "school",
+        "bangladesh"
+    ],
+    "author": "BAF Shaheen College",
+    "license": "MIT",
+    "dependencies": {
+        "firebase": "^8.10.0"
+        },
+    "devDependencies": {
+    "live-server": "^1.2.2"
+    }
+}

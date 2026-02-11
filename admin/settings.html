@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Settings</title>
+    <link rel="stylesheet" href="admin.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div style="max-width: 1200px; margin: 20px auto; padding: 20px;">
+        <button onclick="window.location.href='dashboard.html'"><i class="fas fa-arrow-left"></i> Back</button>
+        <h2 style="margin: 20px 0;">সেটিংস (Super Admin Only)</h2>
+
+        <div class="dash-card">
+            <h3>ড্যাসবোর্ড ইউজার</h3>
+            <button onclick="document.getElementById('user-modal').classList.add('active')">নতুন ইউজার Add করুন</button>
+            
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Email</th>
+                            <th>Name</th>
+                            <th>Roll</th>
+                            <th>Position</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="user-table-body"></tbody>
+                </table>
+            </div>
+        </div>
+        <!-- Teacher/Subject settings can be added similarly -->
+    </div>
+
+    <!-- User Add Modal -->
+    <div id="user-modal" class="popup">
+        <div class="popup-content">
+            <h3>Add New User</h3>
+            <input type="email" id="new-u-email" placeholder="Email" class="mb-2">
+            <input type="text" id="new-u-pass" placeholder="Password" class="mb-2">
+            <input type="text" id="new-u-name" placeholder="Full Name" class="mb-2">
+            <input type="text" id="new-u-roll" placeholder="Roll" class="mb-2">
+            <input type="text" id="new-u-sid" placeholder="Student ID" class="mb-2">
+            <select id="new-u-pos" class="mb-2">
+                <option value="admin">Admin</option>
+                <option value="super admin">Super Admin</option>
+            </select>
+            <button onclick="addNewUser()">Add User</button>
+            <button onclick="document.getElementById('user-modal').classList.remove('active')" style="background: var(--danger);">Close</button>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="../firebase-config.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

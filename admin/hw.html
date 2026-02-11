@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Homework</title>
+    <link rel="stylesheet" href="admin.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div style="max-width: 1200px; margin: 20px auto; padding: 20px;">
+        <button onclick="window.location.href='dashboard.html'"><i class="fas fa-arrow-left"></i> Back to Dashboard</button>
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; margin: 20px 0;">
+            <h2>হোমওয়ার্ক প্যানেল</h2>
+            <button onclick="openAddHwModal()"><i class="fas fa-plus"></i> হোমওয়ার্ক আপলোড</button>
+        </div>
+
+        <div id="admin-hw-list"></div>
+    </div>
+
+    <!-- Upload Modal -->
+    <div id="hw-modal" class="popup">
+        <div class="popup-content" style="max-width: 600px; max-height: 90vh; overflow-y: auto;">
+            <h3>হোমওয়ার্ক আপলোড ফর্ম</h3>
+            <input type="date" id="hw-date" style="margin: 10px 0;">
+            <select id="hw-day" style="margin: 10px 0;">
+                <option value="শনিবার">শনিবার</option>
+                <option value="রবিবার">রবিবার</option>
+                <option value="সোমবার">সোমবার</option>
+                <option value="মঙ্গলবার">মঙ্গলবার</option>
+                <option value="বুধবার">বুধবার</option>
+                <option value="বৃহস্পতিবার">বৃহস্পতিবার</option>
+                <option value="শুক্রবার">শুক্রবার</option>
+            </select>
+            
+            <div id="periods-container"></div>
+            
+            <button onclick="addPeriodInput()" style="background: var(--secondary); margin: 10px 0;">+ পিরিয়ড যোগ করুন</button>
+            <br>
+            <button onclick="saveHomework()">Upload</button>
+            <button onclick="closeHwModal()" style="background: var(--danger);">Close</button>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="../firebase-config.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

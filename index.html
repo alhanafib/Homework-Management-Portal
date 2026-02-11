@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework Management</title>
+    <!-- SEO & OG -->
+    <meta property="og:title" content="Homework Management">
+    <meta property="og:description" content="BAF Shaheen College Dhaka - Class VIII Pluto Homework Portal">
+    <meta property="og:image" content="assets/og-image.jpg">
+    <meta property="og:type" content="website">
+    
+    <!-- CSS & Libraries -->
+    <link rel="stylesheet" href="public.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" href="assets/logo.png">
+</head>
+<body>
+    <!-- start webpushr code --> <script>(function(w,d, s, id) {if(typeof(w.webpushr)!=='undefined') return;w.webpushr=w.webpushr||function(){(w.webpushr.q=w.webpushr.q||[]).push(arguments)};var js, fjs = d.getElementsByTagName(s)[0];js = d.createElement(s); js.id = id;js.async=1;js.src = "https://cdn.webpushr.com/app.min.js";fjs.parentNode.appendChild(js);}(window,document, 'script', 'webpushr-jssdk'));webpushr('setup',{'key':'BBP6zEul0qHwf55NnNWmgak8UI2pb3pQPQ_oJBp6tzBGN75x9OuL6mdLHaz9_oG4QJSN_YHLpBgYXRzAl2oOqlk' });</script><!-- end webpushr code -->
+    
+    <div id="scroll-progress"></div>
+
+    <header>
+        <div class="navbar">
+            <div class="logo" onclick="window.location.href='index.html'">
+                <img src="assets/logo.png" alt="Logo">
+            </div>
+            
+            <div class="header-text text-center hidden-mobile">
+                <h3>Homework Management Portal</h3>
+                <!-- <h3>বি এ এফ শাহীন কলেজ ঢাকা</h3>
+                <p>৮ম শ্রেনী প্লুটো শাখা</p> -->
+            </div>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle"><i class="fas fa-moon"></i></button>
+                <img src="assets/user.png" alt="User" class="avatar" id="user-avatar">
+                
+                <!-- Dropdown -->
+                <div class="dropdown-menu" id="avatar-dropdown">
+                    <div class="dropdown-item" style="border-bottom: 1px solid #ddd; cursor: default;">
+                        <i class="fas fa-user-circle"></i> <span id="dropdown-username">Guest</span>
+                    </div>
+                    <!-- Visible only if logged in -->
+                    <div id="logged-in-menu">
+                        <a id="btn-dashboard" class="dropdown-item"><i class="fas fa-tachometer-alt"></i> ড্যাসবোর্ড</a>
+                        <a href="admin/profile.html" class="dropdown-item"><i class="fas fa-user"></i> আমার প্রোফাইল</a>
+                        <a href="admin/hw.html" class="dropdown-item"><i class="fas fa-book"></i> হোমওয়ার্ক প্যানেল</a>
+                        <a id="btn-dashboard-users" class="dropdown-item hidden"><i class="fas fa-users-cog"></i> ড্যাসবোর্ড ইউজার</a>
+                        <div class="dropdown-item" onclick="handleLogout()" style="color: var(--danger);"><i class="fas fa-sign-out-alt"></i> Logout</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-text" data-aos="fade-down">
+            <h2>হোমওয়ার্ক সেকশন</h2>
+            <p>প্রতিদিনের কাজ প্রতিদিন সম্পন্ন করুন</p>
+        </section>
+
+        <div class="controls-container" data-aos="fade-up">
+            <input type="text" id="search-hw" placeholder="🔍 হোমওয়ার্ক খুঁজুন...">
+            <input type="date" id="filter-date">
+            <select id="filter-subject">
+                <option value="">সকল বিষয়</option>
+                <option value="বাংলা ১ম">বাংলা ১ম</option>
+                <option value="গণিত">গণিত</option>
+                <option value="ইংরেজি">ইংরেজি</option>
+                <!-- Add other subjects -->
+            </select>
+        </div>
+
+        <div id="hw-list" class="homework-container">
+            <!-- Homeworks will be injected here via JS -->
+            <div class="text-center"><i class="fas fa-spinner fa-spin"></i> লোড হচ্ছে...</div>
+        </div>
+    </main>
+
+    <footer>
+        <img src="assets/logo.png" alt="Logo">
+        <p>স্বত্ব © <span id="currentYear"></span></p>
+        <p>Design & Developed by <a style="color: var(--primary);" href="https://mohammadullah.netlify.app/"><b>Mohammadullah Al Hanafi</b></a></p>
+    </footer>
+
+    <div id="back-to-top"><i class="fas fa-arrow-up"></i></div>
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script src="firebase-config.js"></script>
+    <script src="public.js"></script>
+</body>
+</html>
